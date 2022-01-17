@@ -25,7 +25,7 @@ export default function App() {
       <br />
       <br />
       <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open} text={text} />
+      <ChildArea open={open} />
     </div>
   );
 }
