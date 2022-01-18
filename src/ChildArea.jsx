@@ -13,7 +13,7 @@ const style = {
 // 処理コストがかかるfunction・コンポーネントであれば、
 // レンダリング制御することにより、画面の応答速度が上がる。
 export const ChildArea = memo((props) => {
-  const { open } = props;
+  const { open, onClickClose } = props;
 
   console.log("よばれた");
 
@@ -22,6 +22,8 @@ export const ChildArea = memo((props) => {
       {open ? (
         <div style={style}>
           <p>子供コンポーネント</p>
+          <br />
+          <button onClick={onClickClose}>閉じる</button>
         </div>
       ) : null}
     </>

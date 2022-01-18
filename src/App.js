@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { ChildArea } from "./ChildArea";
 import "./styles.css";
 
@@ -15,9 +15,13 @@ export default function App() {
   const onChangeText = (e) => {
     setText(e.target.value);
   };
-  const onClickOpen = () => {
-    setOpen(!open);
-  };
+  const onClickOpen = () => setOpen(!open);
+
+  // useCallbackを使う
+  // functionを生成して、子コンポーネントにわたす。
+  // ChildAreaではmemo化しているが、functionは都度作られるので、毎回レンダリングされてしまう。
+  // なので、setter関数を関しして、値が変更されたことを検知させる。
+  const onClickClose = useCallback(() => setOpen(false), [setOpen]);
 
   return (
     <div className="App">
@@ -25,7 +29,7 @@ export default function App() {
       <br />
       <br />
       <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open} />
+      <ChildArea open={open} onClickClose={onClickClose} />
     </div>
   );
 }
