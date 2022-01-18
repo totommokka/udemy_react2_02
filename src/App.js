@@ -2,6 +2,7 @@ import { useState, useCallback, useMemo } from "react";
 import { ChildArea } from "./ChildArea";
 import { InlineStyle } from "./components/InlineStyle";
 import { CssModules } from "./components/CssModules";
+import { StyledJsx } from "./components/StyledJsx";
 import "./styles.css";
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
       <br />
       <InlineStyle />
       <CssModules />
+      <StyledJsx />
       <br />
       <button onClick={onClickOpen}>表示</button>
       <ChildArea open={open} onClickClose={onClickClose} />
