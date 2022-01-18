@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { ChildArea } from "./ChildArea";
 import "./styles.css";
 
@@ -22,6 +22,12 @@ export default function App() {
   // ChildAreaではmemo化しているが、functionは都度作られるので、毎回レンダリングされてしまう。
   // なので、setter関数を関しして、値が変更されたことを検知させる。
   const onClickClose = useCallback(() => setOpen(false), [setOpen]);
+
+  // userMemo
+  // function自体のメモ化
+  // 第二引数は監視用のsetterのfunction。
+  const temp = useMemo(() => 1 + 3, []);
+  console.log(temp);
 
   return (
     <div className="App">
