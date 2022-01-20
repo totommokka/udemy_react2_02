@@ -11,7 +11,17 @@ export const InlineStyle = () => {
     alignItems: "center"
   };
   const tiltleStyle = {};
-  const buttonStyle = {};
+  const buttonStyle = {
+    backgroundColor: "#abedd8",
+    border: "none",
+    padding: "8px",
+    borderRadius: "8px"
+    // &:hover {
+    //   backgroundColor: "#46cdcf",
+    //   color: "#fff",
+    //   cursor: "pointer"
+    // }
+  };
 
   return (
     <div style={containerStyle}>

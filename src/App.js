@@ -3,7 +3,7 @@ import { ChildArea } from "./ChildArea";
 import { InlineStyle } from "./components/InlineStyle";
 import { CssModules } from "./components/CssModules";
 import { StyledJsx } from "./components/StyledJsx";
-import { StyledComponents } from "./components/StyledComponents";
+import { StyledComponents1 } from "./components/StyledComponents1";
 import "./styles.css";
 
 export default function App() {
@@ -40,7 +40,7 @@ export default function App() {
       <InlineStyle />
       <CssModules />
       <StyledJsx />
-      <StyledComponents />
+      <StyledComponents1 />
       <br />
       <button onClick={onClickOpen}>表示</button>
       <ChildArea open={open} onClickClose={onClickClose} />
